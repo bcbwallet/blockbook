@@ -1,4 +1,4 @@
-{{define "specific"}}{{$blocks := .Blocks}}{{$data := .}}
+{{define "specific"}}{{$path := .Path}}{{$blocks := .Blocks}}{{$data := .}}
 <h1>Blocks <small class="text-muted">by date</small>
 </h1>
 {{if $blocks.Blocks -}}
@@ -17,7 +17,7 @@
         <tbody>
             {{- range $b := $blocks.Blocks -}}
             <tr>
-		    <td><a href="{{.Path}}block/{{$b.Height}}">{{$b.Height}}</a></td>
+                <td><a href="{{$path}}block/{{$b.Height}}">{{$b.Height}}</a></td>
                 <td class="ellipsis">{{$b.Hash}}</td>
                 <td>{{formatUnixTime $b.Time}}</td>
                 <td class="text-right">{{$b.Txs}}</td>

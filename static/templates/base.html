@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="{{.Path}}static/css/main.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="{{.CoinLabel}} Explorer">
     <title>{{.CoinLabel}} Explorer</title>
@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark bg-blkvw">
                 <a class="navbar-brand" href="https://blockviews.com" title="Home">Blockviews</a>
-		<a class="navbar-brand" href="{{.Path}}">
+                <a class="navbar-brand" href="{{.Path}}">
                     {{.CoinLabel}} Explorer
                 </a>
                 <button class="navbar-toggler" type="button" onclick="if(document.getElementById('toggler').className.indexOf('show')>0){document.getElementById('toggler').className='navbar-collapse collapse'}else{document.getElementById('toggler').className='navbar-collapse show'}">
@@ -26,14 +26,14 @@
                     {{- if .InternalExplorer -}}
                     <ul class="navbar-nav ml-md-auto">
                         <li class="nav-item">
-				<a href="{{.Path}}blocks" class="nav-link">Blocks</a>
+                            <a href="{{.Path}}blocks" class="nav-link">Blocks</a>
                         </li>
                         <li class="nav-item">
-				<a href="{{.Path}}" class="nav-link">Status</a>
+                            <a href="{{.Path}}" class="nav-link">Status</a>
                         </li>
                     </ul>
                     <span class="navbar-form ml-md-auto">
-                        <form id="search" action="/search" method="get">
+                        <form id="search" action="search" method="get">
                             <input name="q" type="text" class="form-control" placeholder="Search for block, transaction, address or xpub" focus="true">
                         </form>
                     </span>
@@ -59,7 +59,7 @@
                     <a class="nav-link" href="{{- .TOSLink -}}" target="_blank" rel="noopener noreferrer">Terms</a>
                 </span>
                 <span class="navbar-nav ml-md-auto">
-			<a href="{{.Path}}sendtx" class="nav-link">Send Transaction</a>
+                    <a href="{{.Path}}sendtx" class="nav-link">Send Transaction</a>
                 </span>
             </nav>
         </div>

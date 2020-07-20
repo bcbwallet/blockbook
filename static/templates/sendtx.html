@@ -1,6 +1,6 @@
-{{define "specific" -}}
+{{define "specific" -}}{{$path := .Path}}
 <h1>Send Raw Transaction</h1>
-<form method="POST" action="{{.Path}}sendtx">
+<form method="POST" action="{{$path}}sendtx">
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Raw transaction data</label>
         <textarea class="form-control" rows="8" name="hex">{{.SendTxHex}}</textarea>

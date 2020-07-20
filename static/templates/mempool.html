@@ -1,4 +1,4 @@
-{th}}{define "specific"}}{{$txs := .MempoolTxids.Mempool}}{{$data := .}}
+{{define "specific"}}{{$path := .Path}}{{$txs := .MempoolTxids.Mempool}}{{$data := .}}
 <h1>Mempool Transactions <small class="text-muted">by time of appearance</small>
 </h1>
 <div class="row h-container">
@@ -16,7 +16,7 @@
         <tbody>
             {{- range $tx := $txs -}}
             <tr>
-		    <td class="ellipsis"><a href="{{.Path}}tx/{{$tx.Txid}}">{{$tx.Txid}}</a></td>
+                <td class="ellipsis"><a href="{{$path}}tx/{{$tx.Txid}}">{{$tx.Txid}}</a></td>
                 <td>{{formatUnixTime $tx.Time}}</td>
             </tr>
             {{- end -}}
