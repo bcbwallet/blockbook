@@ -315,12 +315,14 @@ func (s *PublicServer) jsonHandler(handler func(r *http.Request, apiVersion int)
 }
 
 func (s *PublicServer) newTemplateData() *TemplateData {
+	_, path := splitBinding(s.binding)
 	return &TemplateData{
 		CoinName:         s.is.Coin,
 		CoinShortcut:     s.is.CoinShortcut,
 		CoinLabel:        s.is.CoinLabel,
 		ChainType:        s.chainParser.GetChainType(),
 		InternalExplorer: s.internalExplorer && !s.is.InitialSync,
+		Path:             path,
 		TOSLink:          api.Text.TOSLink,
 	}
 }
@@ -411,6 +413,7 @@ type TemplateData struct {
 	CoinShortcut         string
 	CoinLabel            string
 	InternalExplorer     bool
+	Path                 string
 	ChainType            bchain.ChainType
 	Address              *api.Address
 	AddrStr              string

@@ -7,8 +7,8 @@
     <h3 class="col-md-6 col-sm-12">Summary</h3>
     <nav class="col-md-6 col-sm-12">
         <ul class="pagination justify-content-end">
-            <li class="page-item">{{if $b.Prev}}<a class="page-link" href="/block/{{$b.Prev}}">Previous Block</a>{{else}}<span class="page-link text-muted disabled">Previous Block</span>{{end}}</li>
-            <li class="page-item">{{if $b.Next}}<a class="page-link" href="/block/{{$b.Next}}">Next Block</a>{{else}}<span class="page-link text-muted disabled">Next Block</span>{{end}}</li>
+		<li class="page-item">{{if $b.Prev}}<a class="page-link" href="{{.Path}}block/{{$b.Prev}}">Previous Block</a>{{else}}<span class="page-link text-muted disabled">Previous Block</span>{{end}}</li>
+		<li class="page-item">{{if $b.Next}}<a class="page-link" href="{{.Path}}block/{{$b.Next}}">Next Block</a>{{else}}<span class="page-link text-muted disabled">Next Block</span>{{end}}</li>
         </ul>
     </nav>
 </div>

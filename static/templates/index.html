@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td>Last Block</td>
-                    <td class="data">{{if .InternalExplorer}}<a href="/block/{{$bb.BestHeight}}">{{$bb.BestHeight}}</a>{{else}}{{$bb.BestHeight}}{{end}}</td>
+		    <td class="data">{{if .InternalExplorer}}<a href="{{.Path}}block/{{$bb.BestHeight}}">{{$bb.BestHeight}}</a>{{else}}{{$bb.BestHeight}}{{end}}</td>
                 </tr>
                 <tr>
                     <td>Last Block Update</td>
@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>Transactions in Mempool</td>
-                    <td class="data">{{if .InternalExplorer}}<a href="/mempool">{{$bb.MempoolSize}}</a>{{else}}{{$bb.MempoolSize}}{{end}}</td>
+		    <td class="data">{{if .InternalExplorer}}<a href="{{.Path}}mempool">{{$bb.MempoolSize}}</a>{{else}}{{$bb.MempoolSize}}{{end}}</td>
                 </tr>
                 <tr>
                     <td>Size On Disk</td>

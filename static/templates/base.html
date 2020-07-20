@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark bg-blkvw">
                 <a class="navbar-brand" href="https://blockviews.com" title="Home">Blockviews</a>
-                <a class="navbar-brand" href="/">
+		<a class="navbar-brand" href="{{.Path}}">
                     {{.CoinLabel}} Explorer
                 </a>
                 <button class="navbar-toggler" type="button" onclick="if(document.getElementById('toggler').className.indexOf('show')>0){document.getElementById('toggler').className='navbar-collapse collapse'}else{document.getElementById('toggler').className='navbar-collapse show'}">
@@ -26,10 +26,10 @@
                     {{- if .InternalExplorer -}}
                     <ul class="navbar-nav ml-md-auto">
                         <li class="nav-item">
-                            <a href="/blocks" class="nav-link">Blocks</a>
+				<a href="{{.Path}}blocks" class="nav-link">Blocks</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Status</a>
+				<a href="{{.Path}}" class="nav-link">Status</a>
                         </li>
                     </ul>
                     <span class="navbar-form ml-md-auto">
@@ -59,7 +59,7 @@
                     <a class="nav-link" href="{{- .TOSLink -}}" target="_blank" rel="noopener noreferrer">Terms</a>
                 </span>
                 <span class="navbar-nav ml-md-auto">
-                    <a href="/sendtx" class="nav-link">Send Transaction</a>
+			<a href="{{.Path}}sendtx" class="nav-link">Send Transaction</a>
                 </span>
             </nav>
         </div>

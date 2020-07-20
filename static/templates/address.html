@@ -39,7 +39,7 @@
                                 </tr>
                                 {{- range $t := $addr.Tokens -}}
                                 <tr>
-                                    <td class="data ellipsis">{{if $t.Contract}}<a href="/address/{{$t.Contract}}">{{$t.Name}}</a>{{else}}{{$t.Name}}{{end}}</td>
+					<td class="data ellipsis">{{if $t.Contract}}<a href="{{.Path}}address/{{$t.Contract}}">{{$t.Name}}</a>{{else}}{{$t.Name}}{{end}}</td>
                                     <td class="data">{{formatAmountWithDecimals $t.BalanceSat $t.Decimals}} {{$t.Symbol}}</td>
                                     <td class="data">{{$t.Transfers}}</td>
                                 </tr>
