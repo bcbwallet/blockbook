@@ -104,7 +104,7 @@ func NewPublicServer(binding string, certFiles string, db *db.RocksDB, chain bch
 
 	// map only basic functions, the rest is enabled by method MapFullPublicInterface
 	serveMux.Handle(path+"favicon.ico", http.FileServer(http.Dir("./static/")))
-	serveMux.Handle(path+"static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
+	serveMux.Handle(path+"static/", http.StripPrefix(path+"static/", http.FileServer(http.Dir("./static/"))))
 	// default handler
 	serveMux.HandleFunc(path, s.htmlTemplateHandler(s.explorerIndex))
 	// default API handler
@@ -777,6 +777,7 @@ func (s *PublicServer) explorerIndex(w http.ResponseWriter, r *http.Request) (tp
 }
 
 func (s *PublicServer) explorerSearch(w http.ResponseWriter, r *http.Request) (tpl, *TemplateData, error) {
+        _, path := splitBinding(s.binding)
 	q := strings.TrimSpace(r.URL.Query().Get("q"))
 	var tx *api.Tx
 	var address *api.Address
@@ -786,22 +787,22 @@ func (s *PublicServer) explorerSearch(w http.ResponseWriter, r *http.Request) (t
 	if len(q) > 0 {
 		address, err = s.api.GetXpubAddress(q, 0, 1, api.AccountDetailsBasic, &api.AddressFilter{Vout: api.AddressFilterVoutOff}, 0)
 		if err == nil {
-			http.Redirect(w, r, joinURL("/xpub/", address.AddrStr), 302)
+			http.Redirect(w, r, joinURL(path+"pub/", address.AddrStr), 302)
 			return noTpl, nil, nil
 		}
 		block, err = s.api.GetBlock(q, 0, 1)
 		if err == nil {
-			http.Redirect(w, r, joinURL("/block/", block.Hash), 302)
+			http.Redirect(w, r, joinURL(path+"block/", block.Hash), 302)
 			return noTpl, nil, nil
 		}
 		tx, err = s.api.GetTransaction(q, false, false)
 		if err == nil {
-			http.Redirect(w, r, joinURL("/tx/", tx.Txid), 302)
+			http.Redirect(w, r, joinURL(path+"tx/", tx.Txid), 302)
 			return noTpl, nil, nil
 		}
 		address, err = s.api.GetAddress(q, 0, 1, api.AccountDetailsBasic, &api.AddressFilter{Vout: api.AddressFilterVoutOff})
 		if err == nil {
-			http.Redirect(w, r, joinURL("/address/", address.AddrStr), 302)
+			http.Redirect(w, r, joinURL(path+"address/", address.AddrStr), 302)
 			return noTpl, nil, nil
 		}
 	}
