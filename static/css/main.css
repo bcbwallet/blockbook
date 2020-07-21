@@ -112,6 +112,8 @@ h3 {
 @media (max-width: 768px) {
     .navbar {
         font-size: 14px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .bg-blkvw .navbar-brand {
         font-weight: normal;
@@ -135,7 +137,7 @@ h3 {
 
 .alert-data {
     color: #383d41;
-    background-color: #f4f4f4;
+    background-color: #f0f2f7;
     border-color: #d6d8db;
     padding: 15px;
 }
@@ -171,16 +173,16 @@ h3 {
 }
 
 .txvalues-default {
-    background-color: #324366;
+    background-color: #EBEBEB;
     color: #333;
 }
 
 .txvalues-success {
-    background-color: dimgray;
+    background-color: #8EA8DF;
 }
 
 .txvalues-primary {
-    background-color: #000;
+    background-color: #324366;
 }
 
 .txvalues-danger {
