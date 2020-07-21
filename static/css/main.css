@@ -112,8 +112,7 @@ h3 {
 @media (max-width: 768px) {
     .navbar {
         font-size: 14px;
-        padding-left: 0;
-        padding-right: 0;
+        padding: .5rem 0!important;
     }
     .bg-blkvw .navbar-brand {
         font-weight: normal;
@@ -137,7 +136,7 @@ h3 {
 
 .alert-data {
     color: #383d41;
-    background-color: #f0f2f7;
+    background-color: #f8f8f8;
     border-color: #d6d8db;
     padding: 15px;
 }
