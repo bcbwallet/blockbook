@@ -581,7 +581,8 @@ func (s *PublicServer) explorerSpendingTx(w http.ResponseWriter, r *http.Request
 		if ec == nil {
 			spendingTx, err := s.api.GetSpendingTxid(tx, n)
 			if err == nil && spendingTx != "" {
-				http.Redirect(w, r, joinURL("/tx/", spendingTx), 302)
+	                        _, path := splitBinding(s.binding)
+				http.Redirect(w, r, joinURL(path+"tx/", spendingTx), 302)
 				return noTpl, nil, nil
 			}
 		}
