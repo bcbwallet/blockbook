@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/tests/dbtestdata"
+	"github.com/bcbwallet/blockbook/bchain"
+	"github.com/bcbwallet/blockbook/tests/dbtestdata"
 )
 
 func TestErc20_erc20GetTransfersFromLog(t *testing.T) {

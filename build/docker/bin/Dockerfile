@@ -37,11 +37,11 @@ RUN go get github.com/gobuffalo/packr/...
 
 # download pre-loaded depencencies
 RUN \
-    cleanup() { rm -rf $GOPATH/src/github.com/trezor ; } && \
+    cleanup() { rm -rf $GOPATH/src/github.com/bcbwallet ; } && \
     trap cleanup EXIT && \
-    mkdir -p $GOPATH/src/github.com/trezor && \
-    cd $GOPATH/src/github.com/trezor && \
-    git clone https://github.com/trezor/blockbook.git && \
+    mkdir -p $GOPATH/src/github.com/bcbwallet && \
+    cd $GOPATH/src/github.com/bcbwallet && \
+    git clone https://github.com/bcbwallet/blockbook.git && \
     cd blockbook && \
     env GO111MODULE=on go mod vendor && \
     cp -r vendor /build/vendor

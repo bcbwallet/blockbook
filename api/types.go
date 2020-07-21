@@ -7,9 +7,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/trezor/blockbook/bchain"
-	"github.com/trezor/blockbook/common"
-	"github.com/trezor/blockbook/db"
+	"github.com/bcbwallet/blockbook/bchain"
+	"github.com/bcbwallet/blockbook/common"
+	"github.com/bcbwallet/blockbook/db"
 )
 
 const maxUint32 = ^uint32(0)
