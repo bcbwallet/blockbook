@@ -112,7 +112,6 @@ h3 {
 @media (max-width: 768px) {
     .navbar {
         font-size: 14px;
-        padding: .5rem 0!important;
     }
     .bg-blkvw .navbar-brand {
         font-weight: normal;
